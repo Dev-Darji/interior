@@ -93,7 +93,7 @@ export default function Home() {
       <div className="absolute bottom-[15%] right-[-5%] w-[600px] h-[600px] bg-lux-accent-gold/5 blur-[160px] rounded-full pointer-events-none z-0" />
 
       {/* 1. CINEMATIC HERO SECTION */}
-      <section className="min-h-screen flex items-center justify-center relative pt-20 z-10 px-6 md:px-10">
+      <section className="min-h-screen flex items-center justify-center relative pt-32 pb-12 sm:pt-36 lg:pt-20 lg:pb-20 z-10 px-6 md:px-10">
         <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left: Premium Typography */}

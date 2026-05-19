@@ -150,7 +150,7 @@ export default function LuxeNavbar() {
           transition={{ type: 'spring', stiffness: 400, damping: 40 }}
           className="absolute right-0 top-0 h-full w-80 bg-lux-card shadow-xl"
         >
-          <div className="pt-20 px-6">
+          <div className="pt-32 px-6">
             <div className="space-y-4">
               {navLinks.map((link, idx) => (
                 <motion.div
@@ -165,7 +165,11 @@ export default function LuxeNavbar() {
                       setActiveSection(link.id)
                       setIsOpen(false)
                     }}
-                    className="block px-4 py-3 text-sm tracking-[0.15em] uppercase text-lux-text-secondary hover:text-lux-accent-gold hover:bg-lux-bg-secondary/50 rounded-lg transition-all duration-300"
+                    className={`block px-4 py-3 text-sm tracking-[0.15em] uppercase rounded-lg transition-all duration-300 ${
+                      activeSection === link.id
+                        ? 'text-lux-accent-gold font-bold bg-lux-bg-secondary/80'
+                        : 'text-lux-text-secondary hover:text-lux-accent-gold hover:bg-lux-bg-secondary/50'
+                    }`}
                   >
                     {link.label}
                   </Link>
