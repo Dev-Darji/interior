@@ -8,16 +8,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Luxury premium dark palette
-        'lux-bg': '#121212',          // Deepest charcoal
-        'lux-bg-secondary': '#1A1A1A',// Lighter charcoal
-        'lux-card': '#242424',        // Card background
-        'lux-accent-gold': '#F4B333', // Highly visible, bright premium golden-amber gold
-        'lux-accent-tan': '#C59B4B',  // Vibrant copper gold/tan
-        'lux-accent-light': '#F5F3EF',// Soft off-white for high-contrast highlights
-        'lux-text-primary': '#F5F5F7',// Bright crisp text for maximum visibility
-        'lux-text-secondary': '#CFCFCF',// High-readability secondary gray text
-        'lux-text-muted': '#A3A3A3',  // Visible muted gray text
+        // Luxury premium light palette
+        'lux-bg': '#FFFFFF',          // Pristine white background
+        'lux-bg-secondary': '#F9F8F6',// Sophisticated off-white / soft plaster
+        'lux-card': '#FFFFFF',        // Solid white cards
+        'lux-accent-gold': '#F4B333', // Exquisite golden-amber gold
+        'lux-accent-tan': '#C59B4B',  // Elegant warm copper/bronze gold
+        'lux-accent-light': '#121212',// Dark charcoal for high-contrast highlights
+        'lux-text-primary': '#121212',// Rich charcoal for primary headers and text
+        'lux-text-secondary': '#4A4A4A',// Highly legible dark gray for secondary text
+        'lux-text-muted': '#71717A',  // Slate gray for muted helper text
       },
       fontFamily: {
         heading: ['Cormorant Garamond', 'Playfair Display', 'serif'],
