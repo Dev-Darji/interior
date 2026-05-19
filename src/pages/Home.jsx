@@ -93,8 +93,8 @@ export default function Home() {
       <div className="absolute bottom-[15%] right-[-5%] w-[600px] h-[600px] bg-lux-accent-gold/5 blur-[160px] rounded-full pointer-events-none z-0" />
 
       {/* 1. CINEMATIC HERO SECTION */}
-      <section className="min-h-screen flex items-center justify-center relative pt-32 pb-12 sm:pt-36 lg:pt-20 lg:pb-20 z-10 px-6 md:px-10">
-        <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <section className="min-h-screen flex items-center justify-center relative pt-32 pb-12 sm:pt-36 lg:pt-36 lg:pb-24 z-10 px-6 md:px-10">
+        <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left: Premium Typography */}
           <motion.div 
@@ -109,7 +109,7 @@ export default function Home() {
               <span className="text-lux-accent-gold italic">Luxury</span>
             </h1>
 
-            <p className="text-lux-text-primary font-normal text-base md:text-lg leading-relaxed max-w-xl mb-12">
+            <p className="text-lux-text-primary font-normal text-base md:text-lg leading-relaxed max-w-xl mb-6">
               We design and curate bespoke high-end environments, uniting architectural rigor with exquisite materials. Every space is a tailor-made portrait of silent luxury.
             </p>
 
@@ -118,7 +118,7 @@ export default function Home() {
                 to="/projects"
                 className="px-10 py-5 rounded-full bg-lux-accent-gold text-[#121212] text-xs font-bold tracking-[0.2em] uppercase hover:bg-lux-accent-tan transition-all duration-300 shadow-xl hover:shadow-lux-accent-gold/10 hover:translate-y-[-2px]"
               >
-                Explore Atelier Portfolio
+                Explore Portfolio
               </Link>
               <Link
                 to="/contact"
@@ -129,11 +129,11 @@ export default function Home() {
             </div>
 
             {/* Quick stats floating bar */}
-            <div className="mt-16 md:mt-24 grid grid-cols-3 gap-6 border-t border-white/10 pt-8 max-w-lg">
+            <div className="mt-8 md:mt-10 grid grid-cols-3 gap-6 border-t border-slate-200/80 pt-6 max-w-lg">
               {stats.map((stat, idx) => (
                 <div key={idx} className="flex flex-col">
                   <span className="text-2xl md:text-3xl font-heading font-semibold text-lux-accent-gold mb-1">{stat.value}</span>
-                  <span className="text-[10px] uppercase tracking-[0.15em] text-lux-text-secondary font-medium">{stat.label}</span>
+                  <span className="text-[10px] uppercase tracking-[0.15em] text-lux-text-secondary font-bold">{stat.label}</span>
                 </div>
               ))}
             </div>
@@ -177,7 +177,7 @@ export default function Home() {
 
       {/* 2. THE BRAND PHILOSOPHY STORY */}
       <section className="py-32 md:py-44 px-6 md:px-10 bg-lux-bg-secondary relative z-10 border-y border-white/5">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
           {/* Graphic Side */}
           <div className="lg:col-span-5 grid grid-cols-2 gap-4 relative">
@@ -246,7 +246,7 @@ export default function Home() {
 
       {/* 3. SIGNATURE PILLARS (WHY US REDESIGNED) */}
       <section className="py-32 px-6 md:px-10 bg-lux-bg relative z-10">
-        <div className="max-w-[1400px] mx-auto">
+        <div className="max-w-7xl mx-auto">
           <SectionTitle
             title="Design Distinctions"
             subtitle="The core architectural parameters that separate our studio from standard design."
@@ -276,7 +276,7 @@ export default function Home() {
 
       {/* 4. THE SIGNATURE CURATIONS SHOWCASE (PROJECTS REDESIGNED) */}
       <section className="py-32 md:py-44 px-6 md:px-10 bg-lux-bg-secondary relative z-10 border-t border-white/5">
-        <div className="max-w-[1400px] mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 md:mb-28">
             <div>
               <span className="text-xs uppercase tracking-[0.25em] text-lux-accent-gold font-bold block mb-3">Portfolio Curation</span>
