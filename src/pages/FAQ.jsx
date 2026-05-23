@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     question: 'Where is the Elegant Studio located?',
-    answer: 'Our atelier is located at B 1002 Saundarya Palace (બી ૧૦૦૨ સૌંદર્ય પેલેસ), OPP. Radhe Residency, Bhakti Nandan Chowk, Mota Varachha, Surat – 394101, Gujarat, India. Clients are welcome to visit by prior appointment.',
+    answer: 'Our atelier is located at B 1002 Saundarya Palace, OPP. Radhe Residency, Bhakti Nandan Chowk, Mota Varachha, Surat – 394101, Gujarat, India. Clients are welcome to visit by prior appointment.',
   },
   {
     question: 'How do I initiate a new project consultation?',

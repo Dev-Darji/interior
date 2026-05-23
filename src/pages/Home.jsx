@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { useRef } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import SectionTitle from '../components/SectionTitle'
 import ProjectCard from '../components/ProjectCard'
 import Button from '../components/Button'
@@ -37,6 +37,68 @@ import interiorImg9 from '../images/interior_img9.jpeg'
 import interiorImg10 from '../images/interior_img10.jpeg'
 import interiorImg11 from '../images/interior_img11.jpeg'
 import interiorImg12 from '../images/interior_img12.jpeg'
+
+// Immersive dynamic counter for premium count-up effect
+function Counter({ value, duration = 1.5 }) {
+  const [count, setCount] = useState(0)
+  const elementRef = useRef(null)
+  const hasAnimated = useRef(false)
+
+  const target = parseInt(value.replace(/[^0-9]/g, ''), 10) || 0
+  const suffix = value.replace(/[0-9]/g, '')
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true
+          let start = 0
+          const end = target
+          if (start === end) return
+
+          const startTime = performance.now()
+
+          const updateCount = (now) => {
+            const timePassed = now - startTime
+            const progress = Math.min(timePassed / (duration * 1000), 1)
+            
+            // Ease out quad
+            const easeProgress = progress * (2 - progress)
+            const currentCount = Math.floor(easeProgress * (end - start) + start)
+
+            setCount(currentCount)
+
+            if (progress < 1) {
+              requestAnimationFrame(updateCount)
+            } else {
+              setCount(end)
+            }
+          }
+
+          requestAnimationFrame(updateCount)
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current)
+    }
+
+    return () => {
+      if (elementRef.current) {
+        observer.unobserve(elementRef.current)
+      }
+    }
+  }, [target, duration])
+
+  return (
+    <span ref={elementRef}>
+      {count}
+      {suffix}
+    </span>
+  )
+}
 
 export default function Home() {
   const containerRef = useRef(null)
@@ -143,10 +205,12 @@ export default function Home() {
             </div>
 
             {/* Quick stats floating bar */}
-            <div className="mt-8 md:mt-10 grid grid-cols-3 gap-6 border-t border-slate-200/80 pt-6 max-w-lg">
+            <div className="mt-16 md:mt-20 grid grid-cols-3 gap-6 max-w-lg">
               {stats.map((stat, idx) => (
                 <div key={idx} className="flex flex-col">
-                  <span className="text-2xl md:text-3xl font-heading font-semibold text-lux-accent-gold mb-1">{stat.value}</span>
+                  <span className="text-2xl md:text-3xl font-heading font-semibold text-lux-accent-gold mb-1">
+                    <Counter value={stat.value} />
+                  </span>
                   <span className="text-[10px] uppercase tracking-[0.15em] text-lux-text-secondary font-bold">{stat.label}</span>
                 </div>
               ))}

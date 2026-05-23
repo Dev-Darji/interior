@@ -61,7 +61,7 @@ export default function Projects() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-wrap gap-4 justify-center mb-20 md:mb-24"
+          className="flex overflow-x-auto flex-nowrap md:flex-wrap gap-3 md:gap-4 justify-start md:justify-center mb-16 md:mb-24 pb-4 md:pb-0 px-4 md:px-0 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {categories.map((category, idx) => (
             <motion.button
@@ -72,7 +72,7 @@ export default function Projects() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.4 + idx * 0.06 }}
-              className={`px-6 py-2.5 rounded-full font-semibold text-sm uppercase tracking-[0.15em] transition-all duration-300 ${
+              className={`flex-shrink-0 px-6 py-2.5 rounded-full font-semibold text-sm uppercase tracking-[0.15em] transition-all duration-300 ${
                 activeCategory === category
                   ? 'bg-lux-accent-gold text-[#121212] font-bold shadow-md shadow-lux-accent-gold/20'
                   : 'bg-lux-card text-lux-text-secondary border border-white/5 hover:border-lux-accent-gold/50'

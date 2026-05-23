@@ -34,7 +34,7 @@ export default function LuxeNavbar() {
     { path: '/projects', label: 'Projects', id: 'projects' },
     { path: '/services', label: 'Services', id: 'services' },
     { path: '/contact', label: 'Contact', id: 'contact' },
-    { path: '/faq', label: 'FAQ', id: 'faq' },
+    { path: '/faq', label: 'FAQs', id: 'faq' },
   ]
 
   return (

@@ -256,5 +256,5 @@ export const galleryImages = [
 export const stats = [
   { value: '120+', label: 'Projects Completed' },
   { value: '50+', label: 'Happy Clients' },
-  { value: '8', label: 'Years Experience' },
+  { value: '5+', label: 'Years Experience' },
 ]

@@ -162,7 +162,6 @@ export default function Contact() {
                     <h4 className="font-heading font-semibold text-[#121212] mb-2">Studio Address</h4>
                     <p className="text-slate-600 text-sm font-medium leading-relaxed">
                       B 1002 Saundarya Palace,<br />
-                      બી ૧૦૦૨ સૌંદર્ય પેલેસ,<br />
                       OPP. Radhe Residency,<br />
                       Bhakti Nandan Chowk,<br />
                       Mota Varachha, Surat – 394101

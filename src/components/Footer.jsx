@@ -39,12 +39,12 @@ export default function Footer() {
             <h4 className="font-heading font-light text-sm tracking-[0.2em] text-lux-accent-light uppercase">
               Quick Links
             </h4>
-            <ul className="space-y-3.5 text-slate-400 text-sm font-light">
+            <ul className="grid grid-cols-3 md:grid-cols-1 gap-y-3 gap-x-4 md:gap-0 md:space-y-3.5 text-slate-400 text-sm font-light">
               <li><Link to="/" className="hover:text-lux-accent-gold transition-colors duration-300">Home</Link></li>
               <li><Link to="/projects" className="hover:text-lux-accent-gold transition-colors duration-300">Projects</Link></li>
               <li><Link to="/services" className="hover:text-lux-accent-gold transition-colors duration-300">Services</Link></li>
               <li><Link to="/contact" className="hover:text-lux-accent-gold transition-colors duration-300">Contact</Link></li>
-              <li><Link to="/faq" className="hover:text-lux-accent-gold transition-colors duration-300">FAQ</Link></li>
+              <li><Link to="/faq" className="hover:text-lux-accent-gold transition-colors duration-300">FAQs</Link></li>
             </ul>
           </div>
 
@@ -58,7 +58,6 @@ export default function Footer() {
               <div>
                 <p>
                   B 1002 Saundarya Palace,<br />
-                  બી ૧૦૦૨ સૌંદર્ય પેલેસ,<br />
                   OPP. Radhe Residency,<br />
                   Bhakti Nandan Chowk,<br />
                   Mota Varachha, Surat – 394101
