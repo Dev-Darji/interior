@@ -77,7 +77,6 @@ export default function LuxeNavbar() {
                 <Link
                   key={link.id}
                   to={link.path}
-                  onClick={() => setActiveSection(link.id)}
                   className="relative group"
                 >
                   <motion.span
@@ -185,7 +184,6 @@ export default function LuxeNavbar() {
                   <Link
                     to={link.path}
                     onClick={() => {
-                      setActiveSection(link.id)
                       setIsOpen(false)
                     }}
                     className={`block px-4 py-3 text-sm tracking-[0.15em] uppercase rounded-lg transition-all duration-300 ${

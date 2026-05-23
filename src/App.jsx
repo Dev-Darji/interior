@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import LuxeNavbar from './components/LuxeNavbar'
 import Footer from './components/Footer'
