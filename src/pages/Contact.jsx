@@ -22,10 +22,21 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Handle form submission here (EmailJS or your backend)
-    console.log(formData)
+    const subject = encodeURIComponent(`Design Inquiry from ${formData.name}`)
+    const body = encodeURIComponent(
+      `Hello Elegant Design Studio Team,\n\n` +
+      `I would like to request a design consultation. Here are my details:\n\n` +
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Phone: ${formData.phone || 'Not provided'}\n\n` +
+      `Project Vision / Message:\n${formData.message}\n\n` +
+      `Best regards,\n${formData.name}`
+    )
+    
+    window.location.href = `mailto:elegantdesign@gmail.com?subject=${subject}&body=${body}`
+    
     setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 3000)
+    setTimeout(() => setSubmitted(false), 5000)
   }
 
   return (
@@ -36,108 +47,151 @@ export default function Contact() {
 
       {/* Hero Section */}
       <section className="px-6 md:px-10 max-w-7xl mx-auto mb-20 relative z-10">
-        <SectionTitle
-          title="Connect With Us"
-          subtitle="Let's co-create your signature environment. Reach out to discuss your project."
-        />
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+        >
+          <SectionTitle
+            title="Connect With Us"
+            subtitle="Let's co-create your signature environment. Reach out to discuss your project."
+          />
+        </motion.div>
       </section>
 
       {/* Contact Content */}
       <section className="px-6 md:px-10 max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20">
           {/* Contact Information */}
-          <div className="lg:col-span-1 flex flex-col justify-between">
-            <div>
-              <h3 className="text-3xl font-heading font-semibold mb-8 text-[#121212]">
-                Elegant Studio
-              </h3>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+            className="lg:col-span-1 flex flex-col justify-between"
+          >
+            <div className="space-y-6">
+              {/* Header Card */}
+              <div className="border border-lux-accent-gold/25 bg-white p-8 rounded-3xl shadow-sm">
+                <h3 className="text-3xl font-heading font-semibold mb-1 text-[#121212]">
+                  Elegant Studio
+                </h3>
+                <p className="text-[10px] uppercase tracking-[0.2em] text-lux-accent-gold font-bold mb-5">
+                  Architectural &bull; Interior &bull; Landscape Designers
+                </p>
+                <div className="flex items-center gap-4 pt-4 border-t border-slate-100">
+                  <div className="w-11 h-11 rounded-full bg-lux-accent-gold/10 border border-lux-accent-gold/30 flex items-center justify-center text-lux-accent-gold text-sm font-heading font-bold">
+                    SL
+                  </div>
+                  <div>
+                    <span className="text-[10px] uppercase tracking-[0.15em] text-slate-400 font-bold block">Principal Designer</span>
+                    <span className="text-base font-heading font-semibold text-[#121212]">Shrey Lathiya</span>
+                  </div>
+                </div>
+              </div>
 
-              <div className="space-y-8">
-                {/* Phone */}
+              {/* Quick Contact Links */}
+              <div className="border border-lux-accent-gold/25 bg-white p-6 rounded-3xl shadow-sm space-y-1">
                 <motion.a
-                  href="tel:+919876543210"
-                  whileHover={{ x: 6 }}
-                  className="flex items-start gap-4 group cursor-pointer"
+                  href="tel:+919537943516"
+                  whileHover={{ x: 4 }}
+                  className="flex items-center gap-4 group cursor-pointer p-3 rounded-2xl hover:bg-lux-accent-gold/5 transition-all duration-300"
                 >
                   <div className="w-12 h-12 border border-lux-accent-gold/30 rounded-full flex items-center justify-center flex-shrink-0 bg-lux-accent-gold/10 group-hover:bg-lux-accent-gold group-hover:text-[#121212] transition-all duration-300 text-lux-accent-gold">
                     <FiPhone size={18} />
                   </div>
                   <div>
-                    <h4 className="font-heading font-semibold text-[#121212] mb-1">Phone</h4>
-                    <p className="text-slate-600 text-sm font-medium">+91 98765 43210</p>
+                    <h4 className="font-heading font-semibold text-[#121212] mb-0.5">Phone</h4>
+                    <p className="text-slate-600 text-sm font-medium">+91 95379 43516</p>
                   </div>
                 </motion.a>
 
-                {/* Email */}
                 <motion.a
-                  href="mailto:contact@elegantstudio.in"
-                  whileHover={{ x: 6 }}
-                  className="flex items-start gap-4 group cursor-pointer"
+                  href="mailto:elegantdesign@gmail.com"
+                  whileHover={{ x: 4 }}
+                  className="flex items-center gap-4 group cursor-pointer p-3 rounded-2xl hover:bg-lux-accent-gold/5 transition-all duration-300"
                 >
                   <div className="w-12 h-12 border border-lux-accent-gold/30 rounded-full flex items-center justify-center flex-shrink-0 bg-lux-accent-gold/10 group-hover:bg-lux-accent-gold group-hover:text-[#121212] transition-all duration-300 text-lux-accent-gold">
                     <FiMail size={18} />
                   </div>
                   <div>
-                    <h4 className="font-heading font-semibold text-[#121212] mb-1">Email</h4>
-                    <p className="text-slate-600 text-sm font-medium">contact@elegantstudio.in</p>
+                    <h4 className="font-heading font-semibold text-[#121212] mb-0.5">Email</h4>
+                    <p className="text-slate-600 text-sm font-medium">elegantdesign@gmail.com</p>
                   </div>
                 </motion.a>
 
-                {/* Instagram */}
                 <motion.a
-                  href="https://instagram.com/elegant_design_studio._"
+                  href="https://wa.me/919537943516"
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ x: 6 }}
-                  className="flex items-start gap-4 group cursor-pointer"
-                >
-                  <div className="w-12 h-12 border border-lux-accent-gold/30 rounded-full flex items-center justify-center flex-shrink-0 bg-lux-accent-gold/10 group-hover:bg-lux-accent-gold group-hover:text-[#121212] transition-all duration-300 text-lux-accent-gold">
-                    <FiInstagram size={18} />
-                  </div>
-                  <div>
-                    <h4 className="font-heading font-semibold text-[#121212] mb-1">Instagram</h4>
-                    <p className="text-slate-600 text-sm font-medium">@elegant_design_studio._</p>
-                  </div>
-                </motion.a>
-
-                {/* WhatsApp */}
-                <motion.a
-                  href="https://wa.me/919876543210"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ x: 6 }}
-                  className="flex items-start gap-4 group cursor-pointer"
+                  whileHover={{ x: 4 }}
+                  className="flex items-center gap-4 group cursor-pointer p-3 rounded-2xl hover:bg-lux-accent-gold/5 transition-all duration-300"
                 >
                   <div className="w-12 h-12 border border-lux-accent-gold/30 rounded-full flex items-center justify-center flex-shrink-0 bg-lux-accent-gold/10 group-hover:bg-lux-accent-gold group-hover:text-[#121212] transition-all duration-300 text-lux-accent-gold">
                     <BsWhatsapp size={18} />
                   </div>
                   <div>
-                    <h4 className="font-heading font-semibold text-[#121212] mb-1">WhatsApp Chat</h4>
+                    <h4 className="font-heading font-semibold text-[#121212] mb-0.5">WhatsApp</h4>
                     <p className="text-slate-600 text-sm font-medium">Direct Consultation</p>
                   </div>
                 </motion.a>
-              </div>
-            </div>
 
-            {/* Office Hours */}
-            <div className="border border-lux-accent-gold/25 bg-white p-8 rounded-3xl mt-12 shadow-sm">
-              <h4 className="font-heading font-semibold text-xl text-[#121212] mb-4">Studio Hours</h4>
-              <div className="space-y-2 text-slate-600 text-sm font-medium">
-                <p className="flex justify-between border-b border-slate-100 pb-2"><span>Monday - Friday</span> <span>9:30 AM - 6:30 PM</span></p>
-                <p className="flex justify-between border-b border-slate-100 pb-2"><span>Saturday</span> <span>10:00 AM - 4:00 PM</span></p>
-                <p className="flex justify-between"><span>Sunday</span> <span className="text-lux-accent-gold font-bold">By Appointment</span></p>
+                <motion.a
+                  href="https://instagram.com/elegant_design_studio._"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ x: 4 }}
+                  className="flex items-center gap-4 group cursor-pointer p-3 rounded-2xl hover:bg-lux-accent-gold/5 transition-all duration-300"
+                >
+                  <div className="w-12 h-12 border border-lux-accent-gold/30 rounded-full flex items-center justify-center flex-shrink-0 bg-lux-accent-gold/10 group-hover:bg-lux-accent-gold group-hover:text-[#121212] transition-all duration-300 text-lux-accent-gold">
+                    <FiInstagram size={18} />
+                  </div>
+                  <div>
+                    <h4 className="font-heading font-semibold text-[#121212] mb-0.5">Instagram</h4>
+                    <p className="text-slate-600 text-sm font-medium">@elegant_design_studio._</p>
+                  </div>
+                </motion.a>
+              </div>
+
+              {/* Address Card */}
+              <div className="border border-lux-accent-gold/25 bg-white p-6 rounded-3xl shadow-sm">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 border border-lux-accent-gold/30 rounded-full flex items-center justify-center flex-shrink-0 bg-lux-accent-gold/10 text-lux-accent-gold mt-0.5">
+                    <FiMapPin size={18} />
+                  </div>
+                  <div>
+                    <h4 className="font-heading font-semibold text-[#121212] mb-2">Studio Address</h4>
+                    <p className="text-slate-600 text-sm font-medium leading-relaxed">
+                      B 1002 Saundarya Palace,<br />
+                      બી ૧૦૦૨ સૌંદર્ય પેલેસ,<br />
+                      OPP. Radhe Residency,<br />
+                      Bhakti Nandan Chowk,<br />
+                      Mota Varachha, Surat – 394101
+                    </p>
+                    <span className="text-[10px] text-lux-accent-gold font-bold uppercase tracking-wider mt-2 block">Gujarat, India</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Studio Hours Card */}
+              <div className="border border-lux-accent-gold/25 bg-white p-6 rounded-3xl shadow-sm">
+                <h4 className="font-heading font-semibold text-[#121212] mb-4">Studio Hours</h4>
+                <div className="space-y-2.5 text-slate-600 text-sm font-medium">
+                  <p className="flex justify-between border-b border-slate-50 pb-2.5"><span>Monday – Friday</span> <span className="text-[#121212]">9:30 AM – 6:30 PM</span></p>
+                  <p className="flex justify-between border-b border-slate-50 pb-2.5"><span>Saturday</span> <span className="text-[#121212]">10:00 AM – 4:00 PM</span></p>
+                  <p className="flex justify-between"><span>Sunday</span> <span className="text-lux-accent-gold font-bold">By Appointment</span></p>
+                </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
             <motion.form
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.15, ease: 'easeOut' }}
               onSubmit={handleSubmit}
-              className="border border-lux-accent-gold/25 bg-white p-8 md:p-12 rounded-3xl shadow-lg shadow-lux-accent-gold/5"
+              className="border-2 border-lux-accent-gold/40 bg-white p-8 md:p-12 rounded-3xl shadow-xl shadow-lux-accent-gold/5"
             >
               <h3 className="text-3xl font-heading font-semibold mb-8 text-[#121212]">
                 Send a Message
@@ -147,7 +201,7 @@ export default function Contact() {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="mb-8 p-4 bg-lux-accent-gold/10 text-lux-accent-gold border border-lux-accent-gold/25 rounded-2xl text-sm font-semibold"
+                  className="mb-8 p-4 bg-lux-accent-gold/10 text-lux-accent-gold border-2 border-lux-accent-gold/30 rounded-2xl text-sm font-semibold"
                 >
                   Thank you for reaching out. Our design consultant will contact you within 24 hours.
                 </motion.div>
@@ -165,7 +219,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50/50 text-[#121212] placeholder-slate-400 focus:outline-none focus:border-lux-accent-gold focus:bg-white transition-all duration-300 shadow-inner"
+                    className="w-full px-5 py-4 rounded-2xl border-2 border-lux-accent-gold/30 bg-slate-50/20 text-[#121212] placeholder-slate-400 focus:outline-none focus:border-lux-accent-gold focus:bg-white transition-all duration-300 shadow-sm"
                     placeholder="Enter your name"
                   />
                 </div>
@@ -181,8 +235,8 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50/50 text-[#121212] placeholder-slate-400 focus:outline-none focus:border-lux-accent-gold focus:bg-white transition-all duration-300 shadow-inner"
-                    placeholder="example@elegance.com"
+                    className="w-full px-5 py-4 rounded-2xl border-2 border-lux-accent-gold/30 bg-slate-50/20 text-[#121212] placeholder-slate-400 focus:outline-none focus:border-lux-accent-gold focus:bg-white transition-all duration-300 shadow-sm"
+                    placeholder="elegantdesign@gmail.com"
                   />
                 </div>
 
@@ -196,7 +250,7 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50/50 text-[#121212] placeholder-slate-400 focus:outline-none focus:border-lux-accent-gold focus:bg-white transition-all duration-300 shadow-inner"
+                    className="w-full px-5 py-4 rounded-2xl border-2 border-lux-accent-gold/30 bg-slate-50/20 text-[#121212] placeholder-slate-400 focus:outline-none focus:border-lux-accent-gold focus:bg-white transition-all duration-300 shadow-sm"
                     placeholder="Enter phone number"
                   />
                 </div>
@@ -212,7 +266,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-slate-50/50 text-[#121212] placeholder-slate-400 focus:outline-none focus:border-lux-accent-gold focus:bg-white transition-all duration-300 shadow-inner resize-none"
+                    className="w-full px-5 py-4 rounded-2xl border-2 border-lux-accent-gold/30 bg-slate-50/20 text-[#121212] placeholder-slate-400 focus:outline-none focus:border-lux-accent-gold focus:bg-white transition-all duration-300 shadow-sm resize-none"
                     placeholder="Describe your design aspirations, preferred style, and budget details..."
                   />
                 </div>
@@ -228,10 +282,22 @@ export default function Contact() {
 
       {/* Map Section */}
       <section className="px-6 md:px-10 max-w-7xl mx-auto">
-        <h3 className="text-3xl font-heading font-semibold mb-8 text-[#121212] text-center">
+        <motion.h3
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          className="text-3xl font-heading font-semibold mb-8 text-[#121212] text-center"
+        >
           Our Location
-        </h3>
-        <div className="w-full h-[450px] border border-lux-accent-gold/20 rounded-4xl overflow-hidden relative shadow-xl">
+        </motion.h3>
+        <motion.div
+          initial={{ opacity: 0, y: 40, scale: 0.97 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="w-full h-[450px] border border-lux-accent-gold/20 rounded-4xl overflow-hidden relative shadow-xl"
+        >
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14875.056637402094!2d72.825!3d21.17!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDEwJzEyLjAiTiA3MsKwNDknMzAuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
             width="100%"
@@ -241,7 +307,7 @@ export default function Contact() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />
-        </div>
+        </motion.div>
       </section>
     </div>
   )

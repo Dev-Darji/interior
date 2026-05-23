@@ -5,18 +5,48 @@ import img4 from '../images/img4.jpeg'
 import img5 from '../images/img5.jpeg'
 import img6 from '../images/img6.jpeg'
 
+// Import premium generated interior images for high-contrast offline blend
+import interiorImg1 from '../images/interior_img1.jpeg'
+import interiorImg2 from '../images/interior_img2.jpeg'
+import interiorImg3 from '../images/interior_img3.jpeg'
+import interiorImg4 from '../images/interior_img4.jpeg'
+import interiorImg5 from '../images/interior_img5.jpeg'
+import interiorImg6 from '../images/interior_img6.jpeg'
+import interiorImg7 from '../images/interior_img7.jpeg'
+import interiorImg8 from '../images/interior_img8.jpeg'
+import interiorImg9 from '../images/interior_img9.jpeg'
+import interiorImg10 from '../images/interior_img10.jpeg'
+import interiorImg11 from '../images/interior_img11.jpeg'
+import interiorImg12 from '../images/interior_img12.jpeg'
+
+const allImages = [
+  img1, interiorImg1,
+  img2, interiorImg2,
+  img3, interiorImg3,
+  img4, interiorImg4,
+  img5, interiorImg5,
+  img6, interiorImg6,
+  interiorImg7,
+  interiorImg8,
+  interiorImg9,
+  interiorImg10,
+  interiorImg11,
+  interiorImg12
+]
+
 export const projects = [
   {
     id: 1,
     title: 'Luxury Villa Redesign',
     category: 'Luxury Villa',
     description: 'Complete interior transformation of a modern villa with contemporary design elements',
-    image: img1,
+    image: img1, // Your original gorgeous villa exterior
     location: 'Dubai, UAE',
     area: '5,500 sq ft',
     materials: ['Italian Marble', 'Premium Wood', 'Crystal Chandeliers'],
     beforeImage: img1,
-    afterImage: img1,
+    afterImage: interiorImg1, // Our custom living room interior
+    gallery: allImages,
     relatedProjects: [2, 3],
   },
   {
@@ -24,12 +54,13 @@ export const projects = [
     title: 'Modern Kitchen Design',
     category: 'Modular Kitchen',
     description: 'State-of-the-art modular kitchen with smart storage solutions',
-    image: img2,
+    image: interiorImg2, // Our custom modern kitchen interior
     location: 'Mumbai, India',
     area: '400 sq ft',
     materials: ['Stainless Steel', 'German Appliances', 'Quartz Countertops'],
-    beforeImage: img2,
-    afterImage: img2,
+    beforeImage: img2, // Your original kitchen/exterior context
+    afterImage: interiorImg2,
+    gallery: allImages,
     relatedProjects: [1, 4],
   },
   {
@@ -37,12 +68,13 @@ export const projects = [
     title: 'Corporate Office Space',
     category: 'Office',
     description: 'Professional workspace design with ergonomic and aesthetic balance',
-    image: img3,
+    image: interiorImg3, // Our custom office interior
     location: 'Bangalore, India',
     area: '10,000 sq ft',
     materials: ['Polished Concrete', 'Wood Paneling', 'Smart Lighting'],
-    beforeImage: img3,
-    afterImage: img3,
+    beforeImage: img3, // Your original building exterior
+    afterImage: interiorImg3,
+    gallery: allImages,
     relatedProjects: [4, 5],
   },
   {
@@ -50,12 +82,13 @@ export const projects = [
     title: 'Residential Apartment Makeover',
     category: 'Residential',
     description: 'Elegant apartment redesign with sustainable and modern elements',
-    image: img4,
+    image: interiorImg4, // Our custom dining lounge interior
     location: 'Pune, India',
     area: '1,200 sq ft',
     materials: ['Eco-friendly Paint', 'Bamboo Flooring', 'Natural Lighting'],
-    beforeImage: img4,
-    afterImage: img4,
+    beforeImage: img4, // Your original apartment structure
+    afterImage: interiorImg4,
+    gallery: allImages,
     relatedProjects: [2, 3],
   },
   {
@@ -63,12 +96,13 @@ export const projects = [
     title: 'Luxury Retail Store',
     category: 'Commercial',
     description: 'High-end retail space with exclusive display and lighting design',
-    image: img5,
+    image: interiorImg5, // Our custom boutique store interior
     location: 'Delhi, India',
     area: '3,000 sq ft',
     materials: ['Premium Lighting', 'Custom Fixtures', 'Marble Finishes'],
-    beforeImage: img5,
-    afterImage: img5,
+    beforeImage: img5, // Your original boutique facade
+    afterImage: interiorImg5,
+    gallery: allImages,
     relatedProjects: [1, 4],
   },
   {
@@ -76,15 +110,115 @@ export const projects = [
     title: 'Luxury Master Bedroom',
     category: 'Residential',
     description: 'Serene bedroom sanctuary with premium furnishings and ambiance',
-    image: img6,
+    image: interiorImg6, // Our custom master bedroom interior
     location: 'Hyderabad, India',
     area: '500 sq ft',
     materials: ['Egyptian Cotton Linens', 'Turkish Carpets', 'Crystal Lighting'],
-    beforeImage: img6,
-    afterImage: img6,
+    beforeImage: img6, // Your original house exterior
+    afterImage: interiorImg6,
+    gallery: allImages,
     relatedProjects: [3, 5],
   },
+  {
+    id: 7,
+    title: 'Elite Seaside Villa',
+    category: 'Luxury Villa',
+    description: 'A striking seaside residence showcasing expansive glass elevations, modern architectural lines, and private pools',
+    image: img2,
+    location: 'Dubai, UAE',
+    area: '6,200 sq ft',
+    materials: ['Premium Glass Facades', 'Structural Steel', 'Polished Concrete'],
+    beforeImage: img2,
+    afterImage: interiorImg1,
+    gallery: allImages,
+    relatedProjects: [1, 12],
+  },
+  {
+    id: 8,
+    title: 'Bespoke Master Spa Suite',
+    category: 'Residential',
+    description: 'A sanctuary of tranquility featuring freestanding tub, Arabescato marble walls, and solid brass fixtures',
+    image: interiorImg7,
+    location: 'Mumbai, India',
+    area: '350 sq ft',
+    materials: ['Italian Arabescato Marble', 'Satin Brass', 'Curated Architectural Lighting'],
+    beforeImage: img6,
+    afterImage: interiorImg7,
+    gallery: allImages,
+    relatedProjects: [6, 13],
+  },
+  {
+    id: 9,
+    title: 'Minimalist Cinema Lounge',
+    category: 'Residential',
+    description: 'An acoustic sanctuary featuring custom-molded oak panels, ambient LED contours, and plush velvet seating',
+    image: interiorImg8,
+    location: 'Bangalore, India',
+    area: '600 sq ft',
+    materials: ['Oak Acoustic Panels', 'Ambient LED Strips', 'Bespoke Velvet Seating'],
+    beforeImage: img3,
+    afterImage: interiorImg8,
+    gallery: allImages,
+    relatedProjects: [3, 11],
+  },
+  {
+    id: 10,
+    title: 'Royal Walk-in Dressing Suite',
+    category: 'Residential',
+    description: 'A high-end wardrobe room featuring glass-faced LED display cabinets, central plush bench, and parquet floors',
+    image: interiorImg9,
+    location: 'Delhi, India',
+    area: '450 sq ft',
+    materials: ['Tempered Glass', 'Integrated LED Shelving', 'Polished Parquet'],
+    beforeImage: img4,
+    afterImage: interiorImg9,
+    gallery: allImages,
+    relatedProjects: [4, 6],
+  },
+  {
+    id: 11,
+    title: 'Bespoke Home Bar & Wine Cellar',
+    category: 'Residential',
+    description: 'Sophisticated hospitality space with backlit golden onyx stone, brass detailing, and dark oak cabinets',
+    image: interiorImg10,
+    location: 'Pune, India',
+    area: '300 sq ft',
+    materials: ['Golden Onyx', 'Solid Brass Accentuation', 'Stained Charcoal Oak'],
+    beforeImage: img2,
+    afterImage: interiorImg10,
+    gallery: allImages,
+    relatedProjects: [2, 9],
+  },
+  {
+    id: 12,
+    title: 'Grand Helical Foyer',
+    category: 'Luxury Villa',
+    description: 'A striking double-height entry lobby defined by a helical floating staircase and floor-to-ceiling glass',
+    image: interiorImg11,
+    location: 'Dubai, UAE',
+    area: '1,500 sq ft',
+    materials: ['Structural Concrete', 'Helical Timber Balustrade', 'Architectural Steel'],
+    beforeImage: img1,
+    afterImage: interiorImg11,
+    gallery: allImages,
+    relatedProjects: [1, 13],
+  },
+  {
+    id: 13,
+    title: 'Indoor Pool & Wellness Sanctuary',
+    category: 'Residential',
+    description: 'An immersive wellness experience featuring limestone decks, custom water features, and botanical integration',
+    image: interiorImg12,
+    location: 'Hyderabad, India',
+    area: '2,500 sq ft',
+    materials: ['Premium Limestone', 'Prismatic Water Finish', 'Botanical Landscaping'],
+    beforeImage: img5,
+    afterImage: interiorImg12,
+    gallery: allImages,
+    relatedProjects: [8, 12],
+  },
 ]
+
 
 export const testimonials = [
   {

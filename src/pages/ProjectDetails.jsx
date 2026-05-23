@@ -127,6 +127,40 @@ export default function ProjectDetails() {
                 </div>
               </div>
             </motion.div>
+
+            {/* Curated Project Design Gallery */}
+            {project.gallery && project.gallery.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                className="mb-16 border-t border-white/5 pt-10"
+              >
+                <h2 className="text-3xl font-heading font-light mb-6 text-lux-text-primary">
+                  Bespoke Design Showcase
+                </h2>
+                <p className="text-lux-text-secondary leading-relaxed font-light mb-8 text-sm">
+                  Explore the full collection of both exterior and interior designs curated for this project.
+                </p>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  {project.gallery.map((image, idx) => (
+                    <motion.div
+                      key={idx}
+                      whileHover={{ scale: 1.03 }}
+                      transition={{ duration: 0.3 }}
+                      className="aspect-[4/3] rounded-2xl overflow-hidden border border-white/5 shadow-md bg-lux-card/40 cursor-zoom-in"
+                    >
+                      <img
+                        src={image}
+                        alt={`Atelier curation ${idx + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
           </div>
 
           {/* Sidebar */}

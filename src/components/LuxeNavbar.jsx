@@ -1,12 +1,25 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { FiMenu, FiX } from 'react-icons/fi'
+import { Link, useLocation } from 'react-router-dom'
+import { FiMenu, FiX, FiPhone, FiInstagram } from 'react-icons/fi'
+import { BsWhatsapp } from 'react-icons/bs'
 import { motion } from 'framer-motion'
 
 export default function LuxeNavbar() {
   const [scrolled, setScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState('home')
+  const location = useLocation()
+
+  // Derive active section from current URL path
+  const getActiveId = () => {
+    const path = location.pathname
+    if (path === '/') return 'home'
+    if (path.startsWith('/projects')) return 'projects'
+    if (path.startsWith('/services')) return 'services'
+    if (path.startsWith('/contact')) return 'contact'
+    if (path.startsWith('/faq')) return 'faq'
+    return 'home'
+  }
+  const activeSection = getActiveId()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,8 +33,8 @@ export default function LuxeNavbar() {
     { path: '/', label: 'Home', id: 'home' },
     { path: '/projects', label: 'Projects', id: 'projects' },
     { path: '/services', label: 'Services', id: 'services' },
-    { path: '/about', label: 'About', id: 'about' },
     { path: '/contact', label: 'Contact', id: 'contact' },
+    { path: '/faq', label: 'FAQ', id: 'faq' },
   ]
 
   return (
@@ -37,7 +50,7 @@ export default function LuxeNavbar() {
             : 'bg-transparent backdrop-blur-xs py-8'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
+        <div className="max-w-[1440px] mx-auto px-8 md:px-16">
           <div className="flex justify-between items-center">
             {/* Logo */}
             <Link to="/" className="relative group flex items-center gap-3">
@@ -46,7 +59,7 @@ export default function LuxeNavbar() {
                 transition={{ duration: 0.5 }}
                 className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center border border-lux-accent-gold/40 rounded-full bg-lux-accent-gold/10 backdrop-blur-md"
               >
-                <span className="text-2xl md:text-3xl font-logo text-lux-accent-gold leading-none mt-1">E</span>
+                <span className="text-2xl md:text-3xl font-heading font-medium text-lux-accent-gold leading-none mt-1">E</span>
               </motion.div>
               <div className="flex flex-col">
                 <span className="text-sm md:text-base font-heading font-bold tracking-[0.2em] text-lux-text-primary leading-tight">
@@ -59,7 +72,7 @@ export default function LuxeNavbar() {
             </Link>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-12">
+            <div className="hidden md:flex items-center space-x-14">
               {navLinks.map((link) => (
                 <Link
                   key={link.id}
@@ -94,26 +107,36 @@ export default function LuxeNavbar() {
               ))}
             </div>
 
-            {/* Right Side - CTA Button */}
-            <div className="hidden md:block">
-              <motion.div
-                whileHover={{ scale: 1.02, y: -1 }}
-                whileTap={{ scale: 0.98 }}
+            {/* Right Side - Social Icons */}
+            <div className="hidden md:flex items-center gap-3">
+              <motion.a
+                href="https://instagram.com/elegant_design_studio._"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-10 h-10 rounded-full border border-lux-accent-gold/30 bg-lux-accent-gold/10 flex items-center justify-center text-lux-accent-gold hover:bg-lux-accent-gold hover:text-[#121212] transition-all duration-300"
               >
-                <Link
-                  to="/contact"
-                  className="relative px-8 py-3 rounded-full text-xs font-bold tracking-[0.15em] uppercase text-[#121212] overflow-hidden group block"
-                >
-                  {/* Gradient background */}
-                  <div className="absolute inset-0 bg-lux-accent-gold rounded-full opacity-100 group-hover:opacity-90 transition-opacity duration-300" />
-
-                  {/* Glow effect */}
-                  <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 blur-xl bg-lux-accent-gold/40 transition-opacity duration-300" />
-
-                  {/* Text */}
-                  <span className="relative z-10 text-[#121212]">Book Consultation</span>
-                </Link>
-              </motion.div>
+                <FiInstagram size={16} />
+              </motion.a>
+              <motion.a
+                href="https://wa.me/919537943516"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-10 h-10 rounded-full border border-lux-accent-gold/30 bg-lux-accent-gold/10 flex items-center justify-center text-lux-accent-gold hover:bg-lux-accent-gold hover:text-[#121212] transition-all duration-300"
+              >
+                <BsWhatsapp size={16} />
+              </motion.a>
+              <motion.a
+                href="tel:+919537943516"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-10 h-10 rounded-full border border-lux-accent-gold/30 bg-lux-accent-gold/10 flex items-center justify-center text-lux-accent-gold hover:bg-lux-accent-gold hover:text-[#121212] transition-all duration-300"
+              >
+                <FiPhone size={16} />
+              </motion.a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -177,20 +200,38 @@ export default function LuxeNavbar() {
               ))}
             </div>
 
-            {/* Mobile CTA */}
+            {/* Mobile Social Icons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 0.5 }}
-              className="mt-8"
+              className="mt-8 flex items-center justify-center gap-4"
             >
-              <Link
-                to="/contact"
+              <a
+                href="https://instagram.com/elegant_design_studio._"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
-                className="block w-full px-6 py-3 bg-lux-accent-gold text-[#121212] rounded-full font-bold text-xs tracking-[0.15em] uppercase text-center hover:bg-lux-accent-tan transition-all duration-300"
+                className="w-12 h-12 rounded-full border border-lux-accent-gold/30 bg-lux-accent-gold/10 flex items-center justify-center text-lux-accent-gold hover:bg-lux-accent-gold hover:text-[#121212] transition-all duration-300"
               >
-                Book Consultation
-              </Link>
+                <FiInstagram size={18} />
+              </a>
+              <a
+                href="https://wa.me/919537943516"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="w-12 h-12 rounded-full border border-lux-accent-gold/30 bg-lux-accent-gold/10 flex items-center justify-center text-lux-accent-gold hover:bg-lux-accent-gold hover:text-[#121212] transition-all duration-300"
+              >
+                <BsWhatsapp size={18} />
+              </a>
+              <a
+                href="tel:+919537943516"
+                onClick={() => setIsOpen(false)}
+                className="w-12 h-12 rounded-full border border-lux-accent-gold/30 bg-lux-accent-gold/10 flex items-center justify-center text-lux-accent-gold hover:bg-lux-accent-gold hover:text-[#121212] transition-all duration-300"
+              >
+                <FiPhone size={18} />
+              </a>
             </motion.div>
           </div>
         </motion.div>

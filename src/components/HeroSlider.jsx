@@ -6,26 +6,38 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-fade'
 
+// Import both original exterior images and new premium interior images for offline use
+import img1 from '../images/img1.jpeg'
+import img3 from '../images/img3.jpeg'
+import img4 from '../images/img4.jpeg'
+import interiorImg1 from '../images/interior_img1.jpeg'
+import interiorImg2 from '../images/interior_img2.jpeg'
+import interiorImg3 from '../images/interior_img3.jpeg'
+
 const luxuryImages = [
   {
-    url: 'https://images.unsplash.com/photo-1616394584738-fc6e612ba151?w=1200&h=700&fit=crop&q=80',
-    alt: 'Luxury Living Room',
+    url: img1,
+    alt: 'Luxury Architectural Exterior',
   },
   {
-    url: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=700&fit=crop&q=80',
-    alt: 'Modern Kitchen',
+    url: interiorImg1,
+    alt: 'Luxury Penthouse Living Room',
   },
   {
-    url: 'https://images.unsplash.com/photo-1631049307038-da0ec84d8b73?w=1200&h=700&fit=crop&q=80',
-    alt: 'Elegant Bedroom',
+    url: img4,
+    alt: 'Contemporary Villa Exterior',
   },
   {
-    url: 'https://images.unsplash.com/photo-1618221195710-dd905b0ec59a?w=1200&h=700&fit=crop&q=80',
-    alt: 'Contemporary Villa',
+    url: interiorImg2,
+    alt: 'High-End Modern Kitchen',
   },
   {
-    url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=700&fit=crop&q=80',
-    alt: 'Office Interior',
+    url: img3,
+    alt: 'Minimalist Architectural Geometry',
+  },
+  {
+    url: interiorImg3,
+    alt: 'Corporate Executive Sanctuary',
   },
 ]
 

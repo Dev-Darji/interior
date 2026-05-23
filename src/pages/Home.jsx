@@ -24,6 +24,20 @@ import img4 from '../images/img4.jpeg'
 import img5 from '../images/img5.jpeg'
 import img6 from '../images/img6.jpeg'
 
+// Import premium generated interior images for high-contrast blend
+import interiorImg1 from '../images/interior_img1.jpeg'
+import interiorImg2 from '../images/interior_img2.jpeg'
+import interiorImg3 from '../images/interior_img3.jpeg'
+import interiorImg4 from '../images/interior_img4.jpeg'
+import interiorImg5 from '../images/interior_img5.jpeg'
+import interiorImg6 from '../images/interior_img6.jpeg'
+import interiorImg7 from '../images/interior_img7.jpeg'
+import interiorImg8 from '../images/interior_img8.jpeg'
+import interiorImg9 from '../images/interior_img9.jpeg'
+import interiorImg10 from '../images/interior_img10.jpeg'
+import interiorImg11 from '../images/interior_img11.jpeg'
+import interiorImg12 from '../images/interior_img12.jpeg'
+
 export default function Home() {
   const containerRef = useRef(null)
   
@@ -42,7 +56,7 @@ export default function Home() {
       number: '01',
       title: 'Bespoke Residential curation',
       subtitle: 'Luxury Villa Atelier',
-      image: img6,
+      image: interiorImg6,
       description: 'An absolute harmony of premium Italian marble, warm brass detailing, and curated architectural lighting.',
       link: '/projects/1'
     },
@@ -50,7 +64,7 @@ export default function Home() {
       number: '02',
       title: 'Signature Culinary Spaces',
       subtitle: 'Modular Kitchen Atelier',
-      image: img2,
+      image: interiorImg2,
       description: 'State-of-the-art storage choreography with integrated German engineering and seamless quartz finishes.',
       link: '/projects/2'
     },
@@ -58,7 +72,7 @@ export default function Home() {
       number: '03',
       title: 'Corporate Executive Sanctuaries',
       subtitle: 'Bespoke Office Atelier',
-      image: img3,
+      image: interiorImg3,
       description: 'A workspace design defined by polished timber panelling, soundproofing, and refined ergonomic layout.',
       link: '/projects/3'
     }
@@ -105,8 +119,8 @@ export default function Home() {
             className="lg:col-span-6 flex flex-col justify-center text-left"
           >
             <h1 className="text-5xl sm:text-6xl md:text-7xl xl:text-8xl font-heading font-bold leading-[1.08] tracking-tight mb-8 text-[#121212]">
-              Spatial <br />
-              <span className="text-lux-accent-gold italic">Luxury</span>
+              Sculpted <br />
+              <span className="text-lux-accent-gold italic">Elegance</span>
             </h1>
 
             <p className="text-lux-text-primary font-normal text-base md:text-lg leading-relaxed max-w-xl mb-6">
@@ -122,7 +136,7 @@ export default function Home() {
               </Link>
               <Link
                 to="/contact"
-                className="px-10 py-5 rounded-full border border-lux-accent-gold/40 text-lux-accent-gold text-xs font-semibold tracking-[0.2em] uppercase transition-all duration-300 hover:bg-lux-accent-gold hover:text-[#121212]"
+                className="px-10 py-5 rounded-full border-2 border-lux-accent-gold text-lux-accent-gold text-xs font-semibold tracking-[0.2em] uppercase transition-all duration-300 hover:bg-lux-accent-gold hover:text-[#121212]"
               >
                 Book Consultation
               </Link>
@@ -153,7 +167,7 @@ export default function Home() {
             {/* Main Immersive Render Image */}
             <div className="w-full max-w-[540px] aspect-[4/5] rounded-4xl overflow-hidden shadow-2xl relative group">
               <img
-                src={img1}
+                src={interiorImg1}
                 alt="High-End Living Sanctuary"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2s] ease-out"
               />
@@ -187,8 +201,8 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                src={img2} 
-                alt="Luxury detail" 
+                src={interiorImg11} 
+                alt="Bespoke luxury foyer helical staircase" 
                 className="rounded-3xl w-full h-[280px] object-cover border border-white/5 shadow-md"
               />
               <motion.img 
@@ -196,8 +210,8 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.15 }}
-                src={img3} 
-                alt="Bespoke furniture" 
+                src={interiorImg9} 
+                alt="Bespoke royal walk-in dressing suite" 
                 className="rounded-3xl w-full h-[180px] object-cover border border-white/5 shadow-md"
               />
             </div>
@@ -207,8 +221,8 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                src={img4} 
-                alt="Material palette" 
+                src={interiorImg7} 
+                alt="Bespoke luxury master spa bath" 
                 className="rounded-3xl w-full h-[180px] object-cover border border-white/5 shadow-md"
               />
               <motion.img 
@@ -216,8 +230,8 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.25 }}
-                src={img5} 
-                alt="Marble textures" 
+                src={interiorImg4} 
+                alt="Exquisite dining lounge" 
                 className="rounded-3xl w-full h-[280px] object-cover border border-white/5 shadow-md"
               />
             </div>

@@ -1,19 +1,23 @@
 import { Link } from 'react-router-dom'
-import { FiInstagram, FiFacebook, FiLinkedin, FiTwitter } from 'react-icons/fi'
+import { FiInstagram, FiPhone, FiMail, FiMapPin } from 'react-icons/fi'
+import { BsWhatsapp } from 'react-icons/bs'
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0a0a] text-lux-text-primary py-16 md:py-20 border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6 md:px-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-16 mb-12 md:mb-16">
-          {/* Logo & Description */}
+    <footer className="bg-[#0a0a0a] text-slate-300 py-16 md:py-20 border-t border-white/5 relative overflow-hidden">
+      {/* Subtle gold glow behind footer */}
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-lux-accent-gold/5 blur-[100px] rounded-full pointer-events-none" />
+
+      <div className="max-w-[1440px] mx-auto px-8 md:px-16 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 items-start mb-12 md:mb-16">
+          {/* Logo & Designer Info */}
           <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 flex items-center justify-center border border-lux-accent-gold/40 rounded-full bg-lux-accent-gold/10">
-                <span className="text-xl font-logo text-lux-accent-gold leading-none mt-1">E</span>
+                <span className="text-xl font-heading font-medium text-lux-accent-gold leading-none mt-1">E</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-sm font-heading font-light tracking-[0.2em] text-lux-text-primary leading-tight">
+                <span className="text-sm font-heading font-light tracking-[0.2em] text-white leading-tight">
                   ELEGANT
                 </span>
                 <span className="text-[9px] font-light tracking-[0.3em] text-lux-accent-gold uppercase leading-tight">
@@ -21,78 +25,88 @@ export default function Footer() {
                 </span>
               </div>
             </div>
-            <p className="text-lux-text-secondary text-sm font-light leading-relaxed">
-              Premium interior design studio creating elegant spaces for modern living.
+            <p className="text-slate-400 text-sm font-light leading-relaxed mb-6">
+              Premium interior, architectural, and landscape design studio creating signature environments across Gujarat.
             </p>
+            <div className="pt-4 border-t border-white/5">
+              <span className="text-xs uppercase tracking-[0.15em] text-lux-accent-gold font-bold block mb-1">Principal Designer</span>
+              <span className="text-lg font-heading font-semibold text-white">Shrey Lathiya</span>
+            </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-heading font-light text-sm tracking-[0.2em] text-lux-accent-light uppercase mb-6">
+            <h4 className="font-heading font-light text-sm tracking-[0.2em] text-lux-accent-light uppercase">
               Quick Links
             </h4>
-            <ul className="space-y-3 text-lux-text-secondary text-sm font-light">
+            <ul className="space-y-3.5 text-slate-400 text-sm font-light">
               <li><Link to="/" className="hover:text-lux-accent-gold transition-colors duration-300">Home</Link></li>
               <li><Link to="/projects" className="hover:text-lux-accent-gold transition-colors duration-300">Projects</Link></li>
-              <li><Link to="/about" className="hover:text-lux-accent-gold transition-colors duration-300">About</Link></li>
+              <li><Link to="/services" className="hover:text-lux-accent-gold transition-colors duration-300">Services</Link></li>
               <li><Link to="/contact" className="hover:text-lux-accent-gold transition-colors duration-300">Contact</Link></li>
+              <li><Link to="/faq" className="hover:text-lux-accent-gold transition-colors duration-300">FAQ</Link></li>
             </ul>
           </div>
 
-          {/* Connect */}
+          {/* Studio Address */}
           <div>
-            <h4 className="font-heading font-light text-sm tracking-[0.2em] text-lux-accent-light uppercase mb-6">
-              Connect
+            <h4 className="font-heading font-light text-sm tracking-[0.2em] text-lux-accent-light uppercase">
+              Our Studio
             </h4>
-            <ul className="space-y-3 text-lux-text-secondary text-sm font-light">
+            <div className="flex gap-3 text-slate-400 text-sm font-light leading-relaxed">
+              <FiMapPin size={16} className="text-lux-accent-gold flex-shrink-0 mt-1" />
+              <div>
+                <p>
+                  B 1002 Saundarya Palace,<br />
+                  બી ૧૦૦૨ સૌંદર્ય પેલેસ,<br />
+                  OPP. Radhe Residency,<br />
+                  Bhakti Nandan Chowk,<br />
+                  Mota Varachha, Surat – 394101
+                </p>
+                <span className="text-[10px] text-lux-accent-gold font-bold uppercase tracking-wider mt-2 block">Gujarat, India</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Contact Details */}
+          <div>
+            <h4 className="font-heading font-light text-sm tracking-[0.2em] text-lux-accent-light uppercase">
+              Get in Touch
+            </h4>
+            <ul className="space-y-4 text-slate-400 text-sm font-light">
               <li>
-                <a href="https://instagram.com/elegant_design_studio._" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-lux-accent-gold transition-colors duration-300 group">
-                  <FiInstagram className="group-hover:text-lux-accent-gold text-lux-text-secondary transition-colors" />
+                <a href="tel:+919537943516" className="flex items-center gap-3 hover:text-lux-accent-gold transition-colors duration-300 group">
+                  <FiPhone size={15} className="text-lux-accent-gold group-hover:scale-110 transition-transform" />
+                  +91 95379 43516
+                </a>
+              </li>
+              <li>
+                <a href="mailto:elegantdesign@gmail.com" className="flex items-center gap-3 hover:text-lux-accent-gold transition-colors duration-300 group">
+                  <FiMail size={15} className="text-lux-accent-gold group-hover:scale-110 transition-transform" />
+                  elegantdesign@gmail.com
+                </a>
+              </li>
+              <li>
+                <a href="https://instagram.com/elegant_design_studio._" target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-lux-accent-gold transition-colors duration-300 group">
+                  <FiInstagram size={15} className="text-lux-accent-gold group-hover:scale-110 transition-transform" />
                   @elegant_design_studio._
                 </a>
               </li>
-              <li><a href="#" className="hover:text-lux-accent-gold transition-colors duration-300">Facebook</a></li>
-              <li><a href="#" className="hover:text-lux-accent-gold transition-colors duration-300">Pinterest</a></li>
+              <li>
+                <a href="https://wa.me/919537943516" target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-lux-accent-gold transition-colors duration-300 group">
+                  <BsWhatsapp size={15} className="text-lux-accent-gold group-hover:scale-110 transition-transform" />
+                  WhatsApp Consultation
+                </a>
+              </li>
             </ul>
-          </div>
-
-          {/* Newsletter */}
-          <div>
-            <h4 className="font-heading font-light text-sm tracking-[0.2em] text-lux-accent-light uppercase mb-6">
-              Newsletter
-            </h4>
-            <form className="flex flex-col space-y-3">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="px-4 py-2.5 bg-white/5 rounded-lg text-white placeholder-lux-text-secondary font-light text-sm focus:outline-none focus:ring-1 focus:ring-lux-accent-gold/50 border border-white/10"
-              />
-              <button className="px-4 py-2.5 bg-lux-accent-gold text-[#121212] font-medium rounded-lg text-sm hover:bg-lux-accent-tan transition-colors duration-300 uppercase tracking-[0.15em]">
-                Subscribe
-              </button>
-            </form>
           </div>
         </div>
 
-        <div className="border-t border-white/5 pt-8 md:pt-10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-lux-text-secondary text-sm font-light">
+        <div className="border-t border-white/5 pt-4 md:pt-10">
+          <div className="flex justify-center items-center">
+            <p className="text-slate-500 text-sm font-light text-center">
               &copy; {new Date().getFullYear()} Elegant Design Studio. All rights reserved.
             </p>
-            <div className="flex space-x-6">
-              <a href="https://instagram.com/elegant_design_studio._" target="_blank" rel="noreferrer" className="text-lux-text-secondary hover:text-lux-accent-gold transition-colors duration-300">
-                <FiInstagram size={18} strokeWidth={1.5} />
-              </a>
-              <a href="#" className="text-lux-text-secondary hover:text-lux-accent-gold transition-colors duration-300">
-                <FiFacebook size={18} strokeWidth={1.5} />
-              </a>
-              <a href="#" className="text-lux-text-secondary hover:text-lux-accent-gold transition-colors duration-300">
-                <FiLinkedin size={18} strokeWidth={1.5} />
-              </a>
-              <a href="#" className="text-lux-text-secondary hover:text-lux-accent-gold transition-colors duration-300">
-                <FiTwitter size={18} strokeWidth={1.5} />
-              </a>
-            </div>
           </div>
         </div>
       </div>

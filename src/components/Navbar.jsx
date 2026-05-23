@@ -19,8 +19,8 @@ export default function Navbar({ darkMode, setDarkMode }) {
     { path: '/', label: 'Home' },
     { path: '/projects', label: 'Projects' },
     { path: '/services', label: 'Services' },
-    { path: '/about', label: 'About' },
     { path: '/contact', label: 'Contact' },
+    { path: '/faq', label: 'FAQ' },
   ]
 
   return (

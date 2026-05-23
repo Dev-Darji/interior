@@ -80,17 +80,23 @@ const process = [
 
 export default function Services() {
   return (
-    <div className="min-h-screen pt-32 pb-20 bg-lux-bg relative overflow-hidden">
+    <div className="min-h-screen pt-32 bg-lux-bg relative overflow-hidden">
       {/* Background Decorative Glows */}
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-lux-accent-gold/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-lux-accent-gold/5 blur-[120px] rounded-full pointer-events-none" />
 
       {/* Hero */}
       <section className="px-6 md:px-10 max-w-7xl mx-auto mb-20 relative z-10">
-        <SectionTitle
-          title="Our Services"
-          subtitle="Tailored architectural interior design and luxury curation solutions."
-        />
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+        >
+          <SectionTitle
+            title="Our Services"
+            subtitle="Tailored architectural interior design and luxury curation solutions."
+          />
+        </motion.div>
       </section>
 
       {/* Services Grid */}
@@ -99,16 +105,20 @@ export default function Services() {
           {servicesData.map((service, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1, duration: 0.6 }}
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ delay: idx * 0.1, duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
               <div className="border border-lux-accent-gold/25 bg-white shadow-sm hover:shadow-xl hover:shadow-lux-accent-gold/10 hover:border-lux-accent-gold transition-all duration-500 rounded-3xl p-8 md:p-10 h-full flex flex-col justify-between group">
                 <div>
-                  <div className="text-4xl text-lux-accent-gold mb-6 group-hover:text-lux-accent-tan transition-colors duration-300">
+                  <motion.div 
+                    className="text-4xl text-lux-accent-gold mb-6 group-hover:text-lux-accent-tan transition-colors duration-300"
+                    whileHover={{ rotate: [0, -10, 10, 0], transition: { duration: 0.5 } }}
+                  >
                     <service.icon strokeWidth={1.2} />
-                  </div>
+                  </motion.div>
                   <h3 className="text-2xl font-heading font-semibold mb-4 text-[#121212] group-hover:text-lux-accent-gold transition-colors duration-300">
                     {service.title}
                   </h3>
@@ -134,19 +144,26 @@ export default function Services() {
       {/* Process Section */}
       <section className="py-24 bg-slate-50 border-y border-slate-100 relative overflow-hidden my-24">
         <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
-          <h2 className="text-4xl lg:text-5xl font-heading font-semibold text-center mb-16 text-[#121212]">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="text-4xl lg:text-5xl font-heading font-semibold text-center mb-16 text-[#121212]"
+          >
             Our Architectural Workflow
-          </h2>
+          </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {process.map((item, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1, duration: 0.6 }}
-                className="border border-lux-accent-gold/20 bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300"
+                initial={{ opacity: 0, x: idx % 2 === 0 ? -30 : 30, y: 20 }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ delay: idx * 0.12, duration: 0.7, type: 'spring', stiffness: 100, damping: 15 }}
+                whileHover={{ y: -6, transition: { duration: 0.3 } }}
+                className="border border-lux-accent-gold/20 bg-white p-8 rounded-3xl shadow-sm hover:shadow-lg hover:border-lux-accent-gold/40 transition-all duration-300"
               >
                 <div className="text-3xl font-heading font-semibold text-lux-accent-gold mb-4">
                   0{idx + 1}
