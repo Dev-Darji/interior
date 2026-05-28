@@ -91,7 +91,7 @@ h2 {
 }
 
 .scroll-to-top:hover {
-  background: #d4af37;
+  background: #C8CCCB;
   transform: translateY(-5px);
 }
 
@@ -107,8 +107,8 @@ h2 {
 }
 
 .hero-bullet-active {
-  background-color: #D4A574;
-  border-color: #D4A574;
+  background-color: #0F1821;
+  border-color: #0F1821;
   width: 30px;
   border-radius: 5px;
 }
@@ -142,3 +142,29 @@ html, body {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+/* Premium brand dark-gray overrides to bypass tailwind config cache and force dark gray highlights */
+.text-lux-accent-gold {
+  color: #555C61 !important;
+}
+
+.bg-lux-accent-gold {
+  background-color: #555C61 !important;
+}
+
+.border-lux-accent-gold {
+  border-color: #555C61 !important;
+}
+
+.hover\:text-lux-accent-gold:hover {
+  color: #555C61 !important;
+}
+
+.hover\:bg-lux-accent-gold:hover {
+  background-color: #555C61 !important;
+}
+
+.hover\:border-lux-accent-gold:hover {
+  border-color: #555C61 !important;
+}
+

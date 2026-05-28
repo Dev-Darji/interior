@@ -10,9 +10,9 @@ import 'swiper/css/effect-fade'
 import img1 from '../images/img1.jpeg'
 import img3 from '../images/img3.jpeg'
 import img4 from '../images/img4.jpeg'
-import interiorImg1 from '../images/interior_img1.jpeg'
-import interiorImg2 from '../images/interior_img2.jpeg'
-import interiorImg3 from '../images/interior_img3.jpeg'
+import luxuryLounge from '../images/luxury_lounge.jpg'
+import modernKitchen from '../images/modern_kitchen.jpg'
+import executiveOffice from '../images/executive_office.jpg'
 
 const luxuryImages = [
   {
@@ -20,7 +20,7 @@ const luxuryImages = [
     alt: 'Luxury Architectural Exterior',
   },
   {
-    url: interiorImg1,
+    url: luxuryLounge,
     alt: 'Luxury Penthouse Living Room',
   },
   {
@@ -28,7 +28,7 @@ const luxuryImages = [
     alt: 'Contemporary Villa Exterior',
   },
   {
-    url: interiorImg2,
+    url: modernKitchen,
     alt: 'High-End Modern Kitchen',
   },
   {
@@ -36,7 +36,7 @@ const luxuryImages = [
     alt: 'Minimalist Architectural Geometry',
   },
   {
-    url: interiorImg3,
+    url: executiveOffice,
     alt: 'Corporate Executive Sanctuary',
   },
 ]
@@ -140,8 +140,8 @@ export const heroSliderStyles = `
   }
 
   .hero-bullet-active {
-    background-color: #D4A574;
-    border-color: #D4A574;
+    background-color: #0F1821;
+    border-color: #0F1821;
     width: 30px;
     border-radius: 5px;
   }

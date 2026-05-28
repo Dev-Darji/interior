@@ -93,7 +93,7 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.6 }}
               >
-                <h3 className="text-5xl md:text-6xl font-heading font-light text-lux-accent-gold mb-2">{stat.value}</h3>
+                <h3 className="text-5xl md:text-6xl font-heading font-light text-[#121212] mb-2">{stat.value}</h3>
                 <p className="text-xs uppercase tracking-[0.2em] text-lux-text-secondary font-light">{stat.label}</p>
               </motion.div>
             ))}

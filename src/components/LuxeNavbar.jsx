@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { FiMenu, FiX, FiPhone, FiInstagram } from 'react-icons/fi'
 import { BsWhatsapp } from 'react-icons/bs'
 import { motion } from 'framer-motion'
+import logoImage from '../images/logo_image.jpeg'
 
 export default function LuxeNavbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -53,13 +54,17 @@ export default function LuxeNavbar() {
         <div className="max-w-[1440px] mx-auto px-8 md:px-16">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <Link to="/" className="relative group flex items-center gap-3">
+            <Link to="/" className="relative group flex items-center gap-3.5">
               <motion.div
-                whileHover={{ scale: 1.05, rotate: [0, -5, 5, 0] }}
-                transition={{ duration: 0.5 }}
-                className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center border border-lux-accent-gold/40 rounded-full bg-lux-accent-gold/10 backdrop-blur-md"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+                className="w-12 h-12 md:w-14 md:h-14 overflow-hidden border border-lux-accent-gold/40 rounded-full shadow-md bg-white"
               >
-                <span className="text-2xl md:text-3xl font-heading font-medium text-lux-accent-gold leading-none mt-1">E</span>
+                <img
+                  src={logoImage}
+                  alt="Elegant Design Studio Logo"
+                  className="w-full h-full object-cover"
+                />
               </motion.div>
               <div className="flex flex-col">
                 <span className="text-sm md:text-base font-heading font-bold tracking-[0.2em] text-lux-text-primary leading-tight">

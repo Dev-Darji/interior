@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FiInstagram, FiPhone, FiMail, FiMapPin } from 'react-icons/fi'
 import { BsWhatsapp } from 'react-icons/bs'
+import logoImage from '../images/logo_image.jpeg'
 
 export default function Footer() {
   return (
@@ -13,8 +14,12 @@ export default function Footer() {
           {/* Logo & Designer Info */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 flex items-center justify-center border border-lux-accent-gold/40 rounded-full bg-lux-accent-gold/10">
-                <span className="text-xl font-heading font-medium text-lux-accent-gold leading-none mt-1">E</span>
+              <div className="w-10 h-10 overflow-hidden border border-lux-accent-gold/40 rounded-full bg-white shadow-sm">
+                <img
+                  src={logoImage}
+                  alt="Elegant Design Studio Logo"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-sm font-heading font-light tracking-[0.2em] text-white leading-tight">
@@ -57,12 +62,8 @@ export default function Footer() {
               <FiMapPin size={16} className="text-lux-accent-gold flex-shrink-0 mt-1" />
               <div>
                 <p>
-                  B 1002 Saundarya Palace,<br />
-                  OPP. Radhe Residency,<br />
-                  Bhakti Nandan Chowk,<br />
-                  Mota Varachha, Surat – 394101
+                  Mota Varachha, Surat, Gujarat
                 </p>
-                <span className="text-[10px] text-lux-accent-gold font-bold uppercase tracking-wider mt-2 block">Gujarat, India</span>
               </div>
             </div>
           </div>

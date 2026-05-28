@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     question: 'Where is the Elegant Studio located?',
-    answer: 'Our atelier is located at B 1002 Saundarya Palace, OPP. Radhe Residency, Bhakti Nandan Chowk, Mota Varachha, Surat – 394101, Gujarat, India. Clients are welcome to visit by prior appointment.',
+    answer: 'Our atelier is located at Mota Varachha, Surat, Gujarat. Clients are welcome to visit by prior appointment.',
   },
   {
     question: 'How do I initiate a new project consultation?',
@@ -79,7 +79,7 @@ export default function FAQ() {
                     <span className="flex-shrink-0 w-10 h-10 border border-lux-accent-gold/30 rounded-full flex items-center justify-center bg-lux-accent-gold/10 text-lux-accent-gold text-sm font-semibold">
                       {String(idx + 1).padStart(2, '0')}
                     </span>
-                    <h3 className="font-heading font-semibold text-lg text-[#121212] group-hover:text-lux-accent-gold transition-colors duration-300">
+                    <h3 className="font-heading font-semibold text-lg text-[#121212] transition-colors duration-300">
                       {faq.question}
                     </h3>
                   </div>

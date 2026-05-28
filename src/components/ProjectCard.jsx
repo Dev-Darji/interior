@@ -30,7 +30,7 @@ export default function ProjectCard({ id, image, title, description, category })
           </div>
 
           {/* Title */}
-          <h3 className="text-2xl md:text-3xl font-heading font-medium text-[#121212] group-hover:text-lux-accent-gold transition-colors duration-300">
+          <h3 className="text-2xl md:text-3xl font-heading font-medium text-[#121212] transition-colors duration-300">
             {title}
           </h3>
 

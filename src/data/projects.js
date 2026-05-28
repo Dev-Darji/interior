@@ -5,33 +5,27 @@ import img4 from '../images/img4.jpeg'
 import img5 from '../images/img5.jpeg'
 import img6 from '../images/img6.jpeg'
 
-// Import premium generated interior images for high-contrast offline blend
-import interiorImg1 from '../images/interior_img1.jpeg'
-import interiorImg2 from '../images/interior_img2.jpeg'
-import interiorImg3 from '../images/interior_img3.jpeg'
-import interiorImg4 from '../images/interior_img4.jpeg'
-import interiorImg5 from '../images/interior_img5.jpeg'
-import interiorImg6 from '../images/interior_img6.jpeg'
-import interiorImg7 from '../images/interior_img7.jpeg'
-import interiorImg8 from '../images/interior_img8.jpeg'
-import interiorImg9 from '../images/interior_img9.jpeg'
-import interiorImg10 from '../images/interior_img10.jpeg'
-import interiorImg11 from '../images/interior_img11.jpeg'
-import interiorImg12 from '../images/interior_img12.jpeg'
+// User Uploaded Luxury Images
+import luxuryLounge from '../images/luxury_lounge.jpg'
+import modernKitchen from '../images/modern_kitchen.jpg'
+import executiveOffice from '../images/executive_office.jpg'
+import cozyBedroom from '../images/cozy_bedroom.jpg'
+import stylishFoyer from '../images/stylish_foyer.jpg'
+import elegantDining from '../images/elegant_dining.jpg'
+import spaBathroom from '../images/spa_bathroom.jpg'
+import commercialLobby from '../images/commercial_lobby.jpg'
+import gardenTerrace from '../images/garden_terrace.jpg'
 
 const allImages = [
-  img1, interiorImg1,
-  img2, interiorImg2,
-  img3, interiorImg3,
-  img4, interiorImg4,
-  img5, interiorImg5,
-  img6, interiorImg6,
-  interiorImg7,
-  interiorImg8,
-  interiorImg9,
-  interiorImg10,
-  interiorImg11,
-  interiorImg12
+  img1, luxuryLounge,
+  img2, modernKitchen,
+  img3, executiveOffice,
+  img4, elegantDining,
+  img5, commercialLobby,
+  img6, cozyBedroom,
+  spaBathroom,
+  gardenTerrace,
+  stylishFoyer
 ]
 
 export const projects = [
@@ -40,12 +34,12 @@ export const projects = [
     title: 'Luxury Villa Redesign',
     category: 'Luxury Villa',
     description: 'Complete interior transformation of a modern villa with contemporary design elements',
-    image: img1, // Your original gorgeous villa exterior
+    image: img1,
     location: 'Dubai, UAE',
     area: '5,500 sq ft',
     materials: ['Italian Marble', 'Premium Wood', 'Crystal Chandeliers'],
     beforeImage: img1,
-    afterImage: interiorImg1, // Our custom living room interior
+    afterImage: luxuryLounge,
     gallery: allImages,
     relatedProjects: [2, 3],
   },
@@ -54,12 +48,12 @@ export const projects = [
     title: 'Modern Kitchen Design',
     category: 'Modular Kitchen',
     description: 'State-of-the-art modular kitchen with smart storage solutions',
-    image: interiorImg2, // Our custom modern kitchen interior
+    image: modernKitchen,
     location: 'Mumbai, India',
     area: '400 sq ft',
     materials: ['Stainless Steel', 'German Appliances', 'Quartz Countertops'],
-    beforeImage: img2, // Your original kitchen/exterior context
-    afterImage: interiorImg2,
+    beforeImage: img2,
+    afterImage: modernKitchen,
     gallery: allImages,
     relatedProjects: [1, 4],
   },
@@ -68,12 +62,12 @@ export const projects = [
     title: 'Corporate Office Space',
     category: 'Office',
     description: 'Professional workspace design with ergonomic and aesthetic balance',
-    image: interiorImg3, // Our custom office interior
+    image: executiveOffice,
     location: 'Bangalore, India',
     area: '10,000 sq ft',
     materials: ['Polished Concrete', 'Wood Paneling', 'Smart Lighting'],
-    beforeImage: img3, // Your original building exterior
-    afterImage: interiorImg3,
+    beforeImage: img3,
+    afterImage: executiveOffice,
     gallery: allImages,
     relatedProjects: [4, 5],
   },
@@ -82,12 +76,12 @@ export const projects = [
     title: 'Residential Apartment Makeover',
     category: 'Residential',
     description: 'Elegant apartment redesign with sustainable and modern elements',
-    image: interiorImg4, // Our custom dining lounge interior
+    image: elegantDining,
     location: 'Pune, India',
     area: '1,200 sq ft',
     materials: ['Eco-friendly Paint', 'Bamboo Flooring', 'Natural Lighting'],
-    beforeImage: img4, // Your original apartment structure
-    afterImage: interiorImg4,
+    beforeImage: img4,
+    afterImage: elegantDining,
     gallery: allImages,
     relatedProjects: [2, 3],
   },
@@ -96,12 +90,12 @@ export const projects = [
     title: 'Luxury Retail Store',
     category: 'Commercial',
     description: 'High-end retail space with exclusive display and lighting design',
-    image: interiorImg5, // Our custom boutique store interior
+    image: commercialLobby,
     location: 'Delhi, India',
     area: '3,000 sq ft',
     materials: ['Premium Lighting', 'Custom Fixtures', 'Marble Finishes'],
-    beforeImage: img5, // Your original boutique facade
-    afterImage: interiorImg5,
+    beforeImage: img5,
+    afterImage: commercialLobby,
     gallery: allImages,
     relatedProjects: [1, 4],
   },
@@ -110,12 +104,12 @@ export const projects = [
     title: 'Luxury Master Bedroom',
     category: 'Residential',
     description: 'Serene bedroom sanctuary with premium furnishings and ambiance',
-    image: interiorImg6, // Our custom master bedroom interior
+    image: cozyBedroom,
     location: 'Hyderabad, India',
     area: '500 sq ft',
     materials: ['Egyptian Cotton Linens', 'Turkish Carpets', 'Crystal Lighting'],
-    beforeImage: img6, // Your original house exterior
-    afterImage: interiorImg6,
+    beforeImage: img6,
+    afterImage: cozyBedroom,
     gallery: allImages,
     relatedProjects: [3, 5],
   },
@@ -129,7 +123,7 @@ export const projects = [
     area: '6,200 sq ft',
     materials: ['Premium Glass Facades', 'Structural Steel', 'Polished Concrete'],
     beforeImage: img2,
-    afterImage: interiorImg1,
+    afterImage: luxuryLounge,
     gallery: allImages,
     relatedProjects: [1, 12],
   },
@@ -138,12 +132,12 @@ export const projects = [
     title: 'Bespoke Master Spa Suite',
     category: 'Residential',
     description: 'A sanctuary of tranquility featuring freestanding tub, Arabescato marble walls, and solid brass fixtures',
-    image: interiorImg7,
+    image: spaBathroom,
     location: 'Mumbai, India',
     area: '350 sq ft',
     materials: ['Italian Arabescato Marble', 'Satin Brass', 'Curated Architectural Lighting'],
     beforeImage: img6,
-    afterImage: interiorImg7,
+    afterImage: spaBathroom,
     gallery: allImages,
     relatedProjects: [6, 13],
   },
@@ -152,12 +146,12 @@ export const projects = [
     title: 'Minimalist Cinema Lounge',
     category: 'Residential',
     description: 'An acoustic sanctuary featuring custom-molded oak panels, ambient LED contours, and plush velvet seating',
-    image: interiorImg8,
+    image: luxuryLounge,
     location: 'Bangalore, India',
     area: '600 sq ft',
     materials: ['Oak Acoustic Panels', 'Ambient LED Strips', 'Bespoke Velvet Seating'],
     beforeImage: img3,
-    afterImage: interiorImg8,
+    afterImage: luxuryLounge,
     gallery: allImages,
     relatedProjects: [3, 11],
   },
@@ -166,12 +160,12 @@ export const projects = [
     title: 'Royal Walk-in Dressing Suite',
     category: 'Residential',
     description: 'A high-end wardrobe room featuring glass-faced LED display cabinets, central plush bench, and parquet floors',
-    image: interiorImg9,
+    image: gardenTerrace,
     location: 'Delhi, India',
     area: '450 sq ft',
     materials: ['Tempered Glass', 'Integrated LED Shelving', 'Polished Parquet'],
     beforeImage: img4,
-    afterImage: interiorImg9,
+    afterImage: gardenTerrace,
     gallery: allImages,
     relatedProjects: [4, 6],
   },
@@ -180,12 +174,12 @@ export const projects = [
     title: 'Bespoke Home Bar & Wine Cellar',
     category: 'Residential',
     description: 'Sophisticated hospitality space with backlit golden onyx stone, brass detailing, and dark oak cabinets',
-    image: interiorImg10,
+    image: stylishFoyer,
     location: 'Pune, India',
     area: '300 sq ft',
     materials: ['Golden Onyx', 'Solid Brass Accentuation', 'Stained Charcoal Oak'],
     beforeImage: img2,
-    afterImage: interiorImg10,
+    afterImage: stylishFoyer,
     gallery: allImages,
     relatedProjects: [2, 9],
   },
@@ -194,12 +188,12 @@ export const projects = [
     title: 'Grand Helical Foyer',
     category: 'Luxury Villa',
     description: 'A striking double-height entry lobby defined by a helical floating staircase and floor-to-ceiling glass',
-    image: interiorImg11,
+    image: stylishFoyer,
     location: 'Dubai, UAE',
     area: '1,500 sq ft',
     materials: ['Structural Concrete', 'Helical Timber Balustrade', 'Architectural Steel'],
     beforeImage: img1,
-    afterImage: interiorImg11,
+    afterImage: stylishFoyer,
     gallery: allImages,
     relatedProjects: [1, 13],
   },
@@ -208,12 +202,12 @@ export const projects = [
     title: 'Indoor Pool & Wellness Sanctuary',
     category: 'Residential',
     description: 'An immersive wellness experience featuring limestone decks, custom water features, and botanical integration',
-    image: interiorImg12,
+    image: gardenTerrace,
     location: 'Hyderabad, India',
     area: '2,500 sq ft',
     materials: ['Premium Limestone', 'Prismatic Water Finish', 'Botanical Landscaping'],
     beforeImage: img5,
-    afterImage: interiorImg12,
+    afterImage: gardenTerrace,
     gallery: allImages,
     relatedProjects: [8, 12],
   },
@@ -254,7 +248,7 @@ export const galleryImages = [
 ]
 
 export const stats = [
-  { value: '120+', label: 'Projects Completed' },
+  { value: '60+', label: 'Projects Completed' },
   { value: '50+', label: 'Happy Clients' },
   { value: '5+', label: 'Years Experience' },
 ]

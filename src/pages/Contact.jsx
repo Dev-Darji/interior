@@ -161,12 +161,8 @@ export default function Contact() {
                   <div>
                     <h4 className="font-heading font-semibold text-[#121212] mb-2">Studio Address</h4>
                     <p className="text-slate-600 text-sm font-medium leading-relaxed">
-                      B 1002 Saundarya Palace,<br />
-                      OPP. Radhe Residency,<br />
-                      Bhakti Nandan Chowk,<br />
-                      Mota Varachha, Surat – 394101
+                      Mota Varachha, Surat, Gujarat
                     </p>
-                    <span className="text-[10px] text-lux-accent-gold font-bold uppercase tracking-wider mt-2 block">Gujarat, India</span>
                   </div>
                 </div>
               </div>

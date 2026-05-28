@@ -74,7 +74,7 @@ export default function Projects() {
               transition={{ duration: 0.4, delay: 0.4 + idx * 0.06 }}
               className={`flex-shrink-0 px-6 py-2.5 rounded-full font-semibold text-sm uppercase tracking-[0.15em] transition-all duration-300 ${
                 activeCategory === category
-                  ? 'bg-lux-accent-gold text-[#121212] font-bold shadow-md shadow-lux-accent-gold/20'
+                  ? 'bg-lux-accent-gold text-white font-bold shadow-md shadow-lux-accent-gold/20'
                   : 'bg-lux-card text-lux-text-secondary border border-white/5 hover:border-lux-accent-gold/50'
               }`}
             >

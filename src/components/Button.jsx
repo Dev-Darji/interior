@@ -14,9 +14,9 @@ export default function Button({
   const baseStyles = 'font-light rounded-full transition-all duration-300 uppercase tracking-[0.15em] text-xs md:text-sm'
 
   const variants = {
-    primary: 'bg-lux-accent-gold text-[#121212] font-medium hover:bg-lux-accent-tan shadow-sm hover:shadow-md border border-lux-accent-gold hover:border-lux-accent-tan',
-    secondary: 'bg-transparent border border-lux-accent-gold/50 text-lux-accent-gold hover:bg-lux-accent-gold hover:text-[#121212]',
-    gold: 'bg-lux-accent-gold text-[#121212] font-medium hover:bg-lux-accent-tan shadow-sm',
+    primary: 'bg-lux-accent-gold text-white font-medium hover:bg-lux-bg-secondary hover:text-[#121212] hover:border-lux-accent-gold-light shadow-sm hover:shadow-md border border-lux-accent-gold transition-all duration-300',
+    secondary: 'bg-transparent border border-lux-accent-gold text-lux-accent-gold hover:bg-lux-accent-gold hover:text-white transition-all duration-300',
+    gold: 'bg-lux-accent-gold text-white font-medium hover:bg-lux-bg-secondary hover:text-[#121212] shadow-sm transition-all duration-300',
   }
 
   const sizes = {

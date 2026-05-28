@@ -113,13 +113,10 @@ export default function Services() {
             >
               <div className="border border-lux-accent-gold/25 bg-white shadow-sm hover:shadow-xl hover:shadow-lux-accent-gold/10 hover:border-lux-accent-gold transition-all duration-500 rounded-3xl p-8 md:p-10 h-full flex flex-col justify-between group">
                 <div>
-                  <motion.div 
-                    className="text-4xl text-lux-accent-gold mb-6 group-hover:text-lux-accent-tan transition-colors duration-300"
-                    whileHover={{ rotate: [0, -10, 10, 0], transition: { duration: 0.5 } }}
-                  >
+                  <div className="text-4xl text-lux-accent-gold mb-6 group-hover:text-lux-accent-tan transition-colors duration-300">
                     <service.icon strokeWidth={1.2} />
-                  </motion.div>
-                  <h3 className="text-2xl font-heading font-semibold mb-4 text-[#121212] group-hover:text-lux-accent-gold transition-colors duration-300">
+                  </div>
+                  <h3 className="text-2xl font-heading font-semibold mb-4 text-[#121212] transition-colors duration-300">
                     {service.title}
                   </h3>
                   <p className="text-slate-600 font-normal text-sm leading-relaxed mb-6">
